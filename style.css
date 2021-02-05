@@ -1,0 +1,66 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.site{
+display: grid;
+grid-template-areas: 
+"header" 
+"content" 
+"signup" 
+"feature_yellow"
+"feature_red"
+"feature_purple";
+grid-template-rows: 1fr 2fr repeat(4,1fr);
+grid-template-columns: 1fr;
+}
+.header{
+    grid-area: header;
+    background-color: lightblue;
+}
+.content{
+    grid-area: content;
+    background-color: lightgray;
+}
+.signup{
+    grid-area: signup;
+    background-color: lightskyblue;
+}
+.feature_yellow{
+    grid-area: feature_yellow;
+    background-color: yellow;
+}
+.feature_red{
+    grid-area: feature_red;
+    background-color: red;
+}
+.feature_purple{
+    grid-area: feature_purple;
+    background-color:purple;
+}
+@media screen and (min-width: 600px){
+    .site{
+        display: grid;
+       grid-template-columns: repeat(2,1fr);
+       grid-template-rows: 1fr 2fr 1fr 1fr;
+       grid-template-areas: 
+       "header header"
+       "content content"
+       "signup feature_yellow"
+       "feature_red feature_purple"; 
+    }
+
+}
+@media screen and (min-width: 1000px){
+    .site{
+        display: grid;
+        grid-template-areas: 
+        "header header header" 
+        "feature_yellow feature_red feature_purple"
+        "signup signup signup" 
+        "content content content" 
+        ;
+        grid-template-rows: repeat(2, 2fr) 1fr 2fr;
+        grid-template-columns: repeat(3,1fr);
+        }
+}
